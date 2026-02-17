@@ -11,6 +11,6 @@ class _MapPageState extends State<MapPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Text('Map');
+    return Text('Map coming soon');
   }
 }
