@@ -39,7 +39,7 @@ class _MemoriesPageState extends State<MemoriesPage> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(20),
+      padding: const EdgeInsets.all(10),
       child: ListView.builder(
         itemCount: sortedDateKeys.length,
         itemBuilder: (context, index) {
