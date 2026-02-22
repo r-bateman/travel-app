@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:travel_app/components/memory_details_view.dart';
 import 'memory_snapshot.dart';
 
 class MemoryByDayList extends StatelessWidget {
@@ -43,6 +44,19 @@ class MemoryByDayList extends StatelessWidget {
     return months[month];
   }
 
+  Future<void> _showDetailsOverlay(BuildContext context, dynamic currentMemory) async {
+    return showDialog<void>(
+      context: context,
+      builder: (BuildContext context) {
+        return MemoryDetailsView(
+          caption: currentMemory[0],
+          imagePath: currentMemory[1],
+          description: currentMemory[3],
+        );
+      }
+    );
+  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -73,9 +87,14 @@ class MemoryByDayList extends StatelessWidget {
           itemCount: currentDateMemories.length,
           itemBuilder: (context, gridIndex) {
             final currentMemory = currentDateMemories[gridIndex];
-            return MemorySnapshot(
-              caption: currentMemory[0],
-              imagePath: currentMemory[1],
+            return GestureDetector(
+              onTap: () {
+                _showDetailsOverlay(context, currentMemory);
+              },
+              child: MemorySnapshot(
+                caption: currentMemory[0],
+                imagePath: currentMemory[1]
+              ),
             );
           },
         ),
