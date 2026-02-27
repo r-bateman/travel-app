@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:travel_app/pages/add_memory_page.dart';
 import 'package:travel_app/pages/map_page.dart';
 import 'package:travel_app/pages/memories_page.dart';
 
@@ -25,12 +26,25 @@ class _HomePageState extends State<HomePage> {
     MemoriesPage()
   ];
 
+  // navigate to AddMemoryPage
+  void _onAddMemoryPressed() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => const AddMemoryPage())
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
+    final bool showFab = _selectedIndex == 1;
     return Scaffold(
       body: Center(
         child: _pages.elementAt(_selectedIndex),
       ),
+      floatingActionButton: showFab ? FloatingActionButton(
+        onPressed: _onAddMemoryPressed,
+        child: const Icon(Icons.add),
+      ): null,
       bottomNavigationBar: BottomNavigationBar(
           items: const <BottomNavigationBarItem>[
             BottomNavigationBarItem(
