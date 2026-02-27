@@ -82,7 +82,7 @@ class MemoryByDayList extends StatelessWidget {
           physics: const NeverScrollableScrollPhysics(),
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2,
-            mainAxisExtent: 230,
+            mainAxisExtent: 240,
           ),
           itemCount: currentDateMemories.length,
           itemBuilder: (context, gridIndex) {
