@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:travel_app/provider/memory_provider.dart';
+import '../models/memory.dart';
+
 
 class MemoryDetailsView extends StatelessWidget {
   final caption;
@@ -65,7 +68,21 @@ class MemoryDetailsView extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   IconButton(
-                      onPressed: (){},
+                      onPressed: () async {
+                            try {
+                            // Just create a test Memory object
+                            await MemoryProvider().addEntry(
+                              Memory(
+                                caption: 'Test Memory',
+                                description: 'Testing Firebase write',
+                                createdAt: DateTime.now(), id: '', assignedAt: DateTime.now(), imagePath: '',
+                              ),
+                            );
+                            print('Memory added successfully!');
+                              } catch (e) {
+                            print('Error adding memory: $e');
+                              }
+                            },
                       icon: Icon(Icons.edit_outlined)
                   ),
                   IconButton(
