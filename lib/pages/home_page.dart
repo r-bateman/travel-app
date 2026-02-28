@@ -1,10 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:travel_app/pages/add_memory_page.dart';
-import 'package:travel_app/pages/login_page.dart';
 import 'package:travel_app/pages/map_page.dart';
 import 'package:travel_app/pages/memories_page.dart';
-import 'package:travel_app/pages/test_login_credentials.dart';
 
 class HomePage extends StatefulWidget{
   const HomePage({super.key});
@@ -17,7 +15,7 @@ class _HomePageState extends State<HomePage> {
 
   // navigate bottom bar
   int _selectedIndex = 1;
-  void navigateBottomBar(index) {
+  void navigateBottomBar(int index) {
     setState(() {
       _selectedIndex = index;
     });
