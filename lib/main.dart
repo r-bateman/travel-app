@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:travel_app/provider/memory_provider.dart';
 import 'pages/home_page.dart';
+import 'package:travel_app/pages/auth/test_login_credentials.dart';
 import 'package:firebase_core/firebase_core.dart';
 
 void main() async {
