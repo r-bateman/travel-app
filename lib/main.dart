@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:travel_app/pages/login_page.dart';
-import 'package:travel_app/pages/test_login_credentials.dart';
+import 'package:provider/provider.dart';
+import 'package:travel_app/provider/memory_provider.dart';
 import 'pages/home_page.dart';
 import 'package:firebase_core/firebase_core.dart';
 
@@ -21,9 +21,12 @@ class MyApp extends StatelessWidget{
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: const TestLoginCredentials(),
+    return ChangeNotifierProvider(
+      create: (context) => MemoryProvider(),
+      builder: (context, child) => const MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: const HomePage(),
+      ),
     );
   }
 }
