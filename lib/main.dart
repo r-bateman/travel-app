@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:travel_app/pages/login_page.dart';
-import 'package:travel_app/pages/test_login_credentials.dart';
-import 'pages/home_page.dart';
+import 'package:travel_app/pages/auth/test_login_credentials.dart';
 import 'package:firebase_core/firebase_core.dart';
 
 void main() async {
